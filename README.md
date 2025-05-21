@@ -1,6 +1,6 @@
 <a id="readme-top"></a>
 
-# Route
+# Routing Annotation
 
 This package provides routing annotation specifications.
 
