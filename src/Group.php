@@ -2,11 +2,12 @@
 
 namespace Annotation\Route;
 
-use Annotation\Route\Contracts\RouteContract;
+use Annotation\Route\Concerns\Arrayable;
+use Annotation\Route\Contracts\RoutingContract;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]
-class Group implements RouteContract
+class Group extends Arrayable implements RoutingContract
 {
     public function __construct(
         public ?string $prefix = null,

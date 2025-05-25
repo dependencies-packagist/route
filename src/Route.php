@@ -2,11 +2,12 @@
 
 namespace Annotation\Route;
 
+use Annotation\Route\Concerns\Arrayable;
 use Annotation\Route\Contracts\RouteContract;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
-class Route implements RouteContract
+class Route extends Arrayable implements RouteContract
 {
     public array $methods;
 

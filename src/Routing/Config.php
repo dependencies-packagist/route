@@ -2,11 +2,12 @@
 
 namespace Annotation\Route\Routing;
 
-use Annotation\Route\Contracts\RoutingContract;
+use Annotation\Route\Concerns\Arrayable;
+use Annotation\Route\Contracts\ConfigContract;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_CLASS)]
-class Config implements RoutingContract
+class Config extends Arrayable implements ConfigContract
 {
     public function __construct(
         public string $key,

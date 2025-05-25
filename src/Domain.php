@@ -2,11 +2,12 @@
 
 namespace Annotation\Route;
 
-use Annotation\Route\Contracts\RouteContract;
+use Annotation\Route\Concerns\Arrayable;
+use Annotation\Route\Contracts\RoutingContract;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_CLASS)]
-class Domain implements RouteContract
+class Domain extends Arrayable implements RoutingContract
 {
     public function __construct(
         public string $domain,

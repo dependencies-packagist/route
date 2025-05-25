@@ -2,11 +2,12 @@
 
 namespace Annotation\Route;
 
-use Annotation\Route\Contracts\RouteContract;
+use Annotation\Route\Concerns\Arrayable;
+use Annotation\Route\Contracts\ResourceContract;
 use Attribute;
 
 #[Attribute(Attribute::TARGET_CLASS)]
-class Resource implements RouteContract
+class Resource extends Arrayable implements ResourceContract
 {
     public function __construct(
         public string            $resource,
