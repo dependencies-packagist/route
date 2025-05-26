@@ -20,9 +20,13 @@ class Arrayable
     {
         $class      = new ReflectionClass($this);
         $properties = $class->getProperties(ReflectionProperty::IS_PUBLIC);
-        $callback   = static fn(array $carry, ReflectionProperty $property) => array_merge($carry, [
-            $property->getName() => $property->getValue($this),
-        ]);
-        return array_reduce($properties, $callback, []);
+        $callable   = static fn(array $accumulator, ReflectionProperty $property) => array_merge(
+            $accumulator,
+            $property->isStatic() ? [] : [
+                $property->getName() => $property->getValue($this),
+            ]
+        );
+        $initial    = [];
+        return array_reduce($properties, $callable, $initial);
     }
 }
