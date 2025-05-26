@@ -16,7 +16,7 @@ class Resource extends Arrayable implements ResourceContract
         public array|string|null $only = null,
         public array|string|null $names = null,
         public array|string|null $parameters = null,
-        public bool              $shallow = false,
+        public bool|null         $shallow = null,
     )
     {
         //

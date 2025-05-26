@@ -16,8 +16,8 @@ class Singleton extends Arrayable implements ResourceContract
         public array|string|null $only = null,
         public array|string|null $names = null,
         public array|string|null $parameters = null,
-        public bool              $creatable = false,
-        public bool              $destroyable = false,
+        public bool|null         $creatable = null,
+        public bool|null         $destroyable = null,
     )
     {
         //
