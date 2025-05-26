@@ -14,7 +14,7 @@ class ApiResource extends Resource
         public array|string|null $only = null,
         public array|string|null $names = null,
         public array|string|null $parameters = null,
-        public bool|null         $shallow = null,
+        public bool              $shallow = false,
     )
     {
         parent::__construct(
