@@ -7,7 +7,7 @@ use Annotation\Route\Contracts\RoutingContract;
 use Attribute;
 use Override;
 
-#[Attribute(Attribute::TARGET_METHOD | Attribute::TARGET_CLASS | Attribute::IS_REPEATABLE)]
+#[Attribute(Attribute::TARGET_CLASS | Attribute::TARGET_METHOD | Attribute::IS_REPEATABLE)]
 class Defaults extends Arrayable implements RoutingContract
 {
     public function __construct(
