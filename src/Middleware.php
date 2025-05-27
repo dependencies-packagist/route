@@ -6,7 +6,7 @@ use Annotation\Route\Concerns\Arrayable;
 use Annotation\Route\Contracts\RoutingContract;
 use Attribute;
 
-#[Attribute(Attribute::TARGET_CLASS)]
+#[Attribute(Attribute::TARGET_CLASS | Attribute::TARGET_METHOD)]
 class Middleware extends Arrayable implements RoutingContract
 {
     public array $middleware = [];
