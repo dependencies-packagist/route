@@ -19,7 +19,7 @@ class Route extends Arrayable implements RouteContract
 
     public function __construct(
         array|string   $methods,
-        public string  $uri,
+        public string  $uri = '',
         public ?string $name = null,
         array|string   $middleware = [],
         array|string   $withoutMiddleware = [],
@@ -39,5 +39,49 @@ class Route extends Arrayable implements RouteContract
         }
 
         return is_array($value) ? $value : [$value];
+    }
+
+    /**
+     * @return array
+     */
+    public function getMethods(): array
+    {
+        return $this->methods;
+    }
+
+    /**
+     * @return array
+     */
+    public function getMiddleware(): array
+    {
+        return $this->middleware;
+    }
+
+    /**
+     * @return array
+     */
+    public function getWithoutMiddleware(): array
+    {
+        return $this->withoutMiddleware;
+    }
+
+    /**
+     * @param string|null $default
+     *
+     * @return string
+     */
+    public function getUri(string $default = null): string
+    {
+        return $this->uri ?? $default;
+    }
+
+    /**
+     * @param string|null $default
+     *
+     * @return string|null
+     */
+    public function getName(string $default = null): ?string
+    {
+        return $this->name ?? $default;
     }
 }
