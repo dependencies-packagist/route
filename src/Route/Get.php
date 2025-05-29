@@ -9,7 +9,7 @@ use Attribute;
 class Get extends Route
 {
     public function __construct(
-        string       $uri = '',
+        ?string      $uri = null,
         ?string      $name = null,
         array|string $middleware = [],
         array|string $withoutMiddleware = [],

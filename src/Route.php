@@ -19,7 +19,7 @@ class Route extends Arrayable implements RouteContract
 
     public function __construct(
         array|string   $methods,
-        public string  $uri = '',
+        public ?string $uri = null,
         public ?string $name = null,
         array|string   $middleware = [],
         array|string   $withoutMiddleware = [],
