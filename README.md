@@ -33,6 +33,23 @@ composer require annotation/route
 
 <p align="right">[<a href="#readme-top">back to top</a>]</p>
 
+| Attribute         | TARGET_CLASS | TARGET_METHOD | IS_REPEATABLE | Interface        |
+|-------------------|--------------|---------------|---------------|------------------|
+| Config            | Yes          | -             | -             | Config           |
+| Domain            | Yes          | -             | -             | Routing          |
+| Prefix            | Yes          | -             | -             | Routing          |
+| Group             | Yes          | -             | Yes           | Routing          |
+| Resource          | Yes          | -             | -             | Routing,Resource |
+| Singleton         | Yes          | -             | -             | Routing,Resource |
+| Middleware        | Yes          | Yes           | -             | Routing          |
+| WithoutMiddleware | Yes          | Yes           | -             | Routing          |
+| WithTrashed       | Yes          | Yes           | -             | Routing          |
+| ScopeBindings     | Yes          | Yes           | -             | Routing          |
+| Defaults          | Yes          | Yes           | Yes           | Routing          |
+| Where             | Yes          | Yes           | Yes           | Routing,Where    |
+| Route             | -            | Yes           | Yes           | Routing,Route    |
+| Fallback          | -            | Yes           | -             | Routing          |
+
 <!-- CONTRIBUTING -->
 
 ## Contributing
